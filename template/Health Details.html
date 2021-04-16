@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Health Details - RBMR</title>
+    <style>
+    body {
+  font-family: "Karla", sans-serif;
+  background-color: #d0d0ce;
+  min-height: 100vh;
+}
+.nav {
+  padding-top: auto;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+}
+
+.nav-tabs li a {
+  color: #777;
+}
+
+.navbar {
+  font-family: Montserrat, sans-serif;
+  margin-bottom: auto;
+  background-color: #2d2d30;
+  border: auto;
+  font-size: 11px !important;
+  letter-spacing: 5px;
+  opacity: 0.9;
+}
+
+.navbar li a,
+.navbar .navbar-brand {
+  color: #d5d5d5 !important;
+}
+
+.navbar-nav li a:hover {
+  color: #fff !important;
+}
+
+.navbar-nav li.active a {
+  color: #fff !important;
+  background-color: #29292c !important;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+
+.login-card {
+  overflow: hidden;
+}
+.login-card-img {
+  border-radius: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.login-card .card-body {
+  padding: 85px 60px 60px;
+}
+.login-card .login-btn {
+  padding: 8px;
+  background-color: #000;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+    </style>
+</head>
+<body>
+      <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="Home.html"> RBMR </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="How it works.html">How it works</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      Are you sure you want to provide this information?
+
+    <ul class="pager">
+      <li class="previous" class="close" data-dismiss="alert"><a href="Health Details.html">Yes</a></li>
+      <li class="next" class="close" data-dismiss="alert"><a href="Home.html"> No</a></li>
+    </ul>
+    </div>
+
+    <div class="mb-3">
+      <label for="formFileMultiple" class="form-label"> Upload Full Physical Exam report </label>
+      <input class="form-control" type="file" id="formFileMultiple" multiple, enable> <br>
+        <button onclick ="myFunction()" type="submit" class="btn btn-light"><a href="Home.html"> Submit</a> </button> <br> <br>
+    <script>
+        function myFunction() {
+        alert("You have registered Successfully");
+        window.location.href = 'Home.html';
+        }
+    </script>
+    </div>
+</body>
+</html>
+
+    </div>
+</body>
+</html>
