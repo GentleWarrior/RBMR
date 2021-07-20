@@ -11,7 +11,7 @@ def home():
 
 @views.route('/', methods=['GET', 'POST'])
 def howit():
-    return render_template("How it Works.html")
+    return render_template("How To.html")
 
 
 @views.route('/',  methods=['GET', 'POST'])
