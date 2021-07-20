@@ -12,9 +12,14 @@ def home():
     return render_template('Home.html')
 
 
-@app.route("/How it works.html")
+@app.route("/Learn More.html")
 def about():
-    return render_template('How it Works.html')
+    return render_template('Learn More.html')
+
+
+@app.route("/How To.html")
+def how():
+    return render_template('How To.html')
 
 
 @app.route("/Register.html")

@@ -1,174 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta charset="UTF-8">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-  <title>Rwanda Bone Marrow Registry</title>
-
-  <style>
-    p,
-    h2 {
-      padding-top: 20px;
-      padding-right: 15px;
-      padding-bottom: 5px;
-      padding-left: 40px;
-    }
-
-    .nav-tabs li a {
-      color: #777;
-    }
-
-    .navbar {
-      font-family: Montserrat, sans-serif;
-      margin-bottom: 0;
-      background-color: #2d2d30;
-      border: 0;
-      font-size: 11px !important;
-      letter-spacing: 4px;
-      opacity: 0.9;
-    }
-
-    .navbar li a,
-    .navbar .navbar-brand {
-      color: #d5d5d5 !important;
-    }
-
-    .navbar-nav li a:hover {
-      color: #fff !important;
-    }
-
-    .navbar-nav li.active a {
-      color: #fff !important;
-      background-color: #29292c !important;
-    }
-
-    .navbar-default .navbar-toggle {
-      border-color: transparent;
-    }
-
-    .open .dropdown-toggle {
-      color: #fff;
-      background-color: #555 !important;
-    }
-
-    .dropdown-menu li a {
-      color: #000 !important;
-    }
-
-    .dropdown-menu li a:hover {
-      background-color: red !important;
-    }
-
-    .jumbotron {
-      background-image: url(background.jpg);
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>RBMR- Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap" rel="stylesheet">
 </head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+           <a href="Home.html" class="logo">
+            <div class="logo">
+                <h4>RBMR</h4>
+            </div>
+            </a>
+            <div class="links">
+                <a href="Learn More.html"> Learn More</a>
+                <a href="How To.html"> How To Donate</a>
+                <a href="Register.html" class="mainlink"> Register</a>
+                <a href="Login.html">Login </a>
+                <a href="Dashboard.html"> Dashboard </a>
 
-<body data-spy="scroll" data-target="navbar">
-  <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="Home.html">RBMR</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="How it works.html">How it works</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Register.html">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html"> Dashboard </a>
-          </li>
-        </ul>
+            </div>
+        </div>
 
-      </div>
     </div>
-  </nav>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-    crossorigin="anonymous"></script>
 
-  <div id="carouselControls" class="carousel slide bg-dark" data-bs-ride="carousel">
-    <div class="carousel-inner ">
-      <div class="carousel-item active">
-        <img src="/static/assets/images/donor.jpg" class="mx-auto d-block mt-5 pt-5" style="height: 500px">
-      </div>
-      <div class="carousel-item">
-        <img src="/static/assets/images/donor2.jpg " class="mx-auto d-block mt-5 pt-5" style="height: 500px">
-      </div>
+    <!--- LANDING PAGE--->
+
+
+    <div class="landing">
+          <div class="landingImage" data-aos="fade-up" data-aos-duration="2000">
+                <img src="../static/images/hospital.png">
+
+            </div>
+        <div class="landingText" data-aos="fade-down" data-aos-duration="1000">
+            <h1> Stem Cell Donation </h1>
+            <h3> A Gift of Life!</h3>
+            <h2> Welcome to Rwanda's First Donors Registry</h2>
+            <div class="btn">
+                <a href="How to.html"> Learn More</a>
+            </div>
+
+        </div>
+
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <div class="jumbotron">
 
-    <h1 class="display-3">Rwanda Bone Marrow Registry</h1>
-    <p class="lead">It is very easy to become a donor</p>
-    <hr class="m-y-2">
-    <p> Want to know more? Learn how it works.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="How it Works.html" role="button">Learn more</a>
-    </p>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-      </div>
-      <div class="col-sm">
-      </div>
-      <div class="col-sm">
-      </div>
-    </div>
-  </div>
-
-  <p>The Rwanda Bone Marrow Registry helps people find stem cell matches. The aim of this registry is to
-    Partner with the Ministry of Health
-    and major hospitals in Kigali to encourage Rwandans to become Stem cell donors.
-  </p>
-
-  <h2> What is Bone Marrow? </h2>
-  <p>
-    Bone marrow is soft, spongy tissue in the body that contains hematopoietic stem cells. It is found in the center of
-    most bones.
-    Hematopoietic stem cells are also found in the blood that is moving throughout your body.
-  </p>
-  <h2>Who needs bone marrow Transplants? </h2>
-  <p>
-    Many people with blood cancers, such as leukemia and lymphoma, sickle cell anemia, and other life-threatening
-    diseases,
-    rely on bone marrow or cord blood transplants to survive.
-    Healthy bone marrow and blood cells are needed in order to live.
-    When disease affects bone marrow so that it can no longer function effectively,
-    a marrow or cord blood transplant could be the best treatment option; for some patients it is the only potential
-    cure.
-  </p>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+            AOS.init();
+    </script>
 
 </body>
-
 </html>
