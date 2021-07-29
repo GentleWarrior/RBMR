@@ -47,6 +47,21 @@ def dash():
 def profile():
     return render_template('login.html', name=current_user.name)
 
+
+#Using this for testing
+@app.route('/testcreateac')
+def test():
+    from scriptspy.models import User
+    from werkzeug.security import generate_password_hash
+    from scriptspy import db
+
+    new = User(email='test@test.com', first_name='John',last_name='Doe', password=generate_password_hash('test', method='sha256'))
+
+    # add the new user to the database
+    db.session.add(new)
+    db.session.commit()
+    return 'Added user to db'
+
 if __name__ == "__main__":
 
     app.run(host='localhost', port='5000', debug=True)
