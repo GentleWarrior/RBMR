@@ -48,7 +48,7 @@ def dash():
     return render_template('Dashboard.html')
 
 
-@app.route('/login.html')
+@app.route('/Dashboard.html')
 @login_required
 def profile():
     return render_template('Dashboard.html', name=current_user.name)

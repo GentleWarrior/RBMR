@@ -33,18 +33,16 @@ def login_post():
 
 @auth.route('/signup_doc', methods=['GET', 'POST'])
 def signup_doc():
-    email = ""
-    first_name = ""
-    password = ""
+
     email = request.form.get('email')
     first_name = request.form.get('first_name')
     password = request.form.get('password')
 
-    #admin = Admin.query.filter_by(email=email).first()  # if this returns a user, then the email already exists in
+    admin = Admin.query.filter_by(email=email).first()  # if this returns a user, then the email already exists in
     # database
-    #if admin:  # if a user is found, we want to redirect back to signup page so user can try again
-       # flash('Email address already exists')
-        #return redirect(url_for('auth.signup_doc'))
+    if admin:  # if a user is found, we want to redirect back to signup page so user can try again
+        flash('Email address already exists')
+        return redirect(url_for('auth.signup_doc'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
     new_admin = Admin(email=email, first_name=first_name, password=generate_password_hash(password, method='sha256'))
