@@ -45,7 +45,7 @@ def signup_donor():
         return redirect(url_for('auth.signup_donor'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
-    new_user = User(email=email, first_name=first_name, password=generate_password_hash(password, method='sha256'))
+    new_user = User(email=email, name=first_name, password=generate_password_hash(password, method='sha256'))
     # add the new user to the database
     db.session.add(new_user)
     db.session.commit()
