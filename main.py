@@ -51,7 +51,7 @@ def dash():
 @app.route('/login.html')
 @login_required
 def profile():
-    return render_template('login.html', name=current_user.name)
+    return render_template('Dashboard.html', name=current_user.name)
 
 if __name__ == "__main__":
 
