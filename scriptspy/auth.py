@@ -37,7 +37,7 @@ def signup_doc():
     name = ""
     password = ""
     email = request.form.get('email')
-    name = request.form.get('name')
+    first_name = request.form.get('name')
     password = request.form.get('password')
 
     admin = Admin.query.filter_by(email=email).first()  # if this returns a user, then the email already exists in
@@ -47,7 +47,7 @@ def signup_doc():
         return redirect(url_for('auth.signup_doc'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
-    new_admin = Admin(email=email, name=name, password=generate_password_hash(password, method='sha256'))
+    new_admin = Admin(email=email, first_name=first_name, password=generate_password_hash(password, method='sha256'))
     # add the new user to the database
     db.session.add(new_admin)
     db.session.commit()
