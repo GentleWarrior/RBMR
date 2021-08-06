@@ -32,7 +32,38 @@ def login_post():
 
 
 @auth.route('/signup', methods=['GET', 'POST'])
-def signup_post():
+def signup_doc():
+    email = ""
+    name = ""
+    password = ""
+    email = request.form.get('email')
+    name = request.form.get('name')
+    password = request.form.get('password')
+
+    admin = Admin.query.filter_by(email=email).first()  # if this returns a user, then the email already exists in
+    # database
+    if admin:  # if a user is found, we want to redirect back to signup page so user can try again
+        flash('Email address already exists')
+        return redirect(url_for('auth.signup_doc'))
+
+    # create new user with the form data. Hash the password so plaintext version isn't saved.
+    new_admin = Admin(email=email, name=name, password=generate_password_hash(password, method='sha256'))
+    # add the new user to the database
+    db.session.add(new_admin)
+    db.session.commit()
+
+    return redirect(url_for('auth.login'))
+
+
+@auth.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('main.py'))
+
+
+@auth.route('/signup_donor', methods=['GET', 'POST'])
+def signup_donor():
     email = ""
     name = ""
     password = ""
@@ -44,7 +75,7 @@ def signup_post():
     # database
     if user:  # if a user is found, we want to redirect back to signup page so user can try again
         flash('Email address already exists')
-        return redirect(url_for('auth.signup_post'))
+        return redirect(url_for('auth.signup_donor'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
     new_user = User(email=email, name=name, password=generate_password_hash(password, method='sha256'))
@@ -53,7 +84,7 @@ def signup_post():
     db.session.add(new_user)
     db.session.commit()
 
-    return redirect(url_for('auth.login'))
+    return redirect(url_for('views.contact'))
 
 
 @auth.route('/logout')
