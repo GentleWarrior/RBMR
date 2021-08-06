@@ -31,6 +31,28 @@ def login_post():
     return redirect(url_for('profile'))
 
 
+@auth.route('/signup_donor', methods=['GET', 'POST'])
+def signup_donor():
+
+    email = request.form.get('email')
+    first_name = request.form.get('first_name')
+    password = request.form.get('password')
+
+    user = User.query.filter_by(email=email).first()  # if this returns a user, then the email already exists in
+    # database
+    if user:  # if a user is found, we want to redirect back to signup page so user can try again
+        flash('Email address already exists')
+        return redirect(url_for('auth.signup_donor'))
+
+    # create new user with the form data. Hash the password so plaintext version isn't saved.
+    new_user = User(email=email, first_name=first_name, password=generate_password_hash(password, method='sha256'))
+    # add the new user to the database
+    db.session.add(new_user)
+    db.session.commit()
+
+    return redirect(url_for('views.contact'))
+
+
 @auth.route('/signup_doc', methods=['GET', 'POST'])
 def signup_doc():
 
