@@ -50,7 +50,7 @@ def signup_donor():
     db.session.add(new_user)
     db.session.commit()
 
-    return redirect(url_for('views.contact'))
+    return redirect(url_for('personal'))
 
 
 @auth.route('/signup_doc', methods=['GET', 'POST'])
