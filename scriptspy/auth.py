@@ -37,7 +37,9 @@ def signup_doc():
     name = ""
     password = ""
     email = request.form.get('email')
+    print(email)
     first_name = request.form.get('name')
+    print(first_name)
     password = request.form.get('password')
 
     admin = Admin.query.filter_by(email=email).first()  # if this returns a user, then the email already exists in
