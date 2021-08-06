@@ -87,8 +87,3 @@ def signup_donor():
     return redirect(url_for('views.contact'))
 
 
-@auth.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    return redirect(url_for('main.py'))
