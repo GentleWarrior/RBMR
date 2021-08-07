@@ -134,15 +134,8 @@
     </div>
   </nav>
 
-  ...
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-    <div class="notification is-danger">
-        {{ messages[0] }}. Go to <a href="{{ url_for('main.register') }}">Register Page</a>.
-    </div>
-{% endif %}
-{% endwith %}
-<form method="POST" action="/signup_donor">
+
+<form method="POST" action="/signup">
   <form action="/signup_donor" method="POST">
 <div class="container register">
                 <div class="row">
