@@ -1,5 +1,6 @@
 from scriptspy import db
 from flask_login import UserMixin
+from wtforms import SubmitField, BooleanField, StringField, PasswordField, validators
 
 
 class Admin(db.Model, UserMixin):
