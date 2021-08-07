@@ -14,12 +14,12 @@ def login():
 
 @auth.route('/profileSubmit', methods=['POST'])
 def profilesub():
-    return redirect(url_for('Contact Details.html'))
+    return redirect(url_for('contact.html'))
 
 
 @auth.route('/ContactSubmit', methods=['POST'])
 def contactSub():
-    return redirect(url_for('Health Details.html'))
+    return redirect(url_for('health'))
 
 
 @auth.route('/login', methods=['POST', 'GET'])
