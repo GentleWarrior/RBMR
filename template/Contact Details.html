@@ -127,36 +127,36 @@
         </div>
         <div class="col-md-7">
           <div class="card-body">
-            <p class="login-card-description">Contact Details</p>
+            <p class="login-card-description">Contact Details & Address </p>
 
-            <form method='POST' action="/profSubmit">
+            <form method='POST' action="/contactSubmit">
               <div class="form-group">
                 <label for="email" class="">Email</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Email address">
+                <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required>
               </div>
               <div class="form-group">
                 <label for="phone" class="">Phone number</label>
-                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone number">
+                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone number" required>
               </div>
               <div class="form-group">
                 <label for="address" class="">Address Line 1</label>
-                <input type="text" name="address" id="address" class="form-control" placeholder="1234 Main St">
+                <input type="text" name="address" id="address" class="form-control" placeholder="1234 Main St" required>
               </div>
               <div class="form-group">
                 <label for="address" class="">Address Line 2</label>
-                <input type="text" name="address" id="address2" class="form-control" placeholder="1234 Main St">
+                <input type="text" name="address" id="address2" class="form-control" placeholder="1234 Main St" required>
               </div>
               <div class="form-group">
                 <label for="POBOX" class="">P.O BOX</label>
-                <input type="text" name="POBOX" id="POBOX" class="form-control" placeholder="P.O BOX">
+                <input type="text" name="POBOX" id="POBOX" class="form-control" placeholder="P.O BOX" required>
               </div>
               <div class="form-group">
                 <label for="City" class="">City</label>
-                <input type="text" name="City" id="City" class="form-control" placeholder="City">
+                <input type="text" name="City" id="City" class="form-control" placeholder="City" required>
               </div>
               <div class="form-group">
                 <label  class="">District</label>
-                <select class="form-select form-select-lg" aria-label="District">
+                <select class="form-select form-select-lg" aria-label="District" required>
                   <option selected>Choose...</option>
                   <option>Gasabo</option>
                   <option>Kicukiro</option>
@@ -168,7 +168,7 @@
                   <a class="text-white" href="Personal details.html">Previous</a>
                 </button>
                 <button class="btn login-btn m-1">
-                  <span class="text-white">Next</span>
+                  <span class="text-white"> Next </span>
                 </button>
               </div>
             </form>
