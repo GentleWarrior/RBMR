@@ -14,7 +14,7 @@ def login():
 
 @auth.route('/profileSubmit', methods=['POST'])
 def profilesub():
-    return redirect(url_for('contact.html'))
+    return redirect(url_for('contact'))
 
 
 @auth.route('/ContactSubmit', methods=['POST'])
