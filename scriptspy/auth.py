@@ -43,10 +43,11 @@ def login_post():
 
 @auth.route('/signup_donor', methods=['GET', 'POST'])
 def signup_donor():
-
     email = request.form.get('email')
     first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
     password = request.form.get('password')
+    DOB = request.form.get('DOB')
 
     user = User.query.filter_by(email=email).first()  # if this returns a user, then the email already exists in
     # database
@@ -55,7 +56,7 @@ def signup_donor():
         return redirect(url_for('auth.signup_donor'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
-    new_user = User(email=email, name=first_name, password=generate_password_hash(password, method='sha256'))
+    new_user = User(email=email, first_name=first_name, last_name=last_name, password=generate_password_hash(password, method='sha256'), DOB=DOB)
     # add the new user to the database
     db.session.add(new_user)
     db.session.commit()
@@ -65,7 +66,6 @@ def signup_donor():
 
 @auth.route('/signup_doc', methods=['GET', 'POST'])
 def signup_doc():
-
     email = request.form.get('email')
     first_name = request.form.get('first_name')
     password = request.form.get('password')
@@ -77,7 +77,7 @@ def signup_doc():
         return redirect(url_for('auth.signup_doc'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
-    new_admin = Admin(email=email, first_name=first_name, password=generate_password_hash(password, method='sha256'))
+    new_admin = Admin(first_name=first_name, email=email, password=generate_password_hash(password, method='sha256'))
     # add the new user to the database
     db.session.add(new_admin)
     db.session.commit()
@@ -90,5 +90,3 @@ def signup_doc():
 def logout():
     logout_user()
     return redirect(url_for('main.py'))
-
-
