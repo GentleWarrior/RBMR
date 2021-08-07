@@ -133,13 +133,6 @@
       </div>
     </div>
   </nav>
-  {% with messages = get_flashed_messages() %}
-{% if messages %}
-    <div class="notification is-danger">
-        {{ messages[0] }}. Try Again at <a href="{{ url_for('auth.signup_donor') }}">Registration page</a>.
-    </div>
-{% endif %}
-{% endwith %}
 
   <form action="/signup_donor" method="POST">
 <div class="container register">
