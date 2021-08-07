@@ -47,7 +47,7 @@ def signup_donor():
     first_name = request.form.get('first_name')
     last_name = request.form.get('last_name')
     password = request.form.get('password')
-    DOB = request.form.get('DOB')
+
 
     user = User.query.filter_by(email=email).first()  # if this returns a user, then the email already exists in
     # database
@@ -56,7 +56,7 @@ def signup_donor():
         return redirect(url_for('auth.signup_donor'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
-    new_user = User(email=email, first_name=first_name, last_name=last_name, password=generate_password_hash(password, method='sha256'), DOB=DOB)
+    new_user = User(email=email, first_name=first_name, last_name=last_name, password=generate_password_hash(password, method='sha256'))
     # add the new user to the database
     db.session.add(new_user)
     db.session.commit()
