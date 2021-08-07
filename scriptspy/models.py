@@ -18,3 +18,4 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(150))
     last_name = db.Column(db.String(150))
 
+

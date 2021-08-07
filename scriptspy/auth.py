@@ -17,6 +17,7 @@ def profilesub():
   return redirect(url_for('Contact Details.html'))
 
 
+
 @auth.route('/login', methods=['POST', 'GET'])
 def login_post():
     email = request.form.get('email')
