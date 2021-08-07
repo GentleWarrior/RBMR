@@ -12,16 +12,14 @@ def login():
     return render_template('login.html')
 
 
-@auth.route('/profSubmit', methods=['POST'])
-def profsub():
-  return redirect(url_for('Health Details.html'))
-
-
 @auth.route('/profileSubmit', methods=['POST'])
 def profilesub():
-  return redirect(url_for('Contact Details.html'))
+    return redirect(url_for('Contact Details.html'))
 
 
+@auth.route('/profSubmit', methods=['POST'])
+def profsubmit():
+    return redirect(url_for('Health Details.html'))
 
 @auth.route('/login', methods=['POST', 'GET'])
 def login_post():
