@@ -69,7 +69,14 @@ def login_post():
     return redirect(url_for('profile'))
 
 
+@auth.route('/signup', methods=['GET', 'POST'])
+def signup_post():
+    email = request.form.get('email')
+    fname = request.form.get('first_name') #give an input the name='first_name' on your front end
+    lname = request.form.get('last_name') #give an input the name='last_name' on your front end
 @auth.route('/signup_donor', methods=['GET', 'POST'])
+
+
 def signup_donor():
     email = request.form.get('email')
     first_name = request.form.get('first_name')
@@ -84,6 +91,7 @@ def signup_donor():
         return redirect(url_for('auth.signup_donor'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
+
     new_user = User(email=email, first_name=first_name, last_name=last_name, password=generate_password_hash(password, method='sha256'))
     # add the new user to the database
     db.session.add(new_user)
@@ -92,12 +100,11 @@ def signup_donor():
     return redirect(url_for('personal', first_name=first_name))
 
 
-
-
-@auth.route('/signup_doc', methods=['GET', 'POST'])
+@auth.route('/signup_doc', methods=['POST'])
 def signup_doc():
     email = request.form.get('email')
     first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
     password = request.form.get('password')
 
     admin = Admin.query.filter_by(email=email).first()  # if this returns a user, then the email already exists in
@@ -107,7 +114,8 @@ def signup_doc():
         return redirect(url_for('auth.signup_doc'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
-    new_admin = Admin(first_name=first_name, email=email, password=generate_password_hash(password, method='sha256'))
+    new_admin = Admin(first_name=first_name, last_name=last_name, email=email, password=generate_password_hash(password, method='sha256'))
+    print(new_admin)
     # add the new user to the database
     db.session.add(new_admin)
     db.session.commit()
