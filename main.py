@@ -42,9 +42,9 @@ def health():
     return render_template('Health Details.html')
 
 
-#@app.route("/Dashboard.html")
-#def dash():
- #   return render_template('Dashboard.html')
+@app.route("/Dashboard.html")
+def dash():
+    return render_template('Dashboard.html')
 
 
 @app.route('/Dashboard.html')

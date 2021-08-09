@@ -127,22 +127,22 @@
           <div class="card-body">
             <p class="login-card-description">Personal Details</p>
 
-            <form  method="POST" action="/profileSubmit">
+            <form action="/profileSubmit" method="POST" >
               <div class="form-group">
                 <label for="firstName" class="">First name</label>
-                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First name" required>
+                <input type="text" id="firstName" class="form-control" placeholder="First name" name="first_name" required>
               </div>
               <div class="form-group">
                 <label for="lastName" class="">Last name</label>
-                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last name" required>
+                <input type="text"  id="lastName" class="form-control" placeholder="Last name" name="last_name" required>
               </div>
               <div class="form-group">
                 <label for="dob" class="">Date of birth</label>
-                <input type="date" name="dob" id="dob" class="form-control" placeholder="Date of birth" required>
+                <input type="date"  id="dob" class="form-control" placeholder="Date of birth" name="DOB" required>
               </div>
               <div class="form-group">
                 <label id ="gender" class="">Gender</label>
-                <select class="form-select form-select-lg" aria-label="Gender" required>
+                <select class="form-select form-select-lg" aria-label="Gender" name="Gender" required>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                 </select>
@@ -151,8 +151,8 @@
                 <button class="btn login-btn m-1">
                   <a class="text-white" href="Personal details.html">Previous</a>
                 </button>
-                <button class="btn login-btn m-1">
-                 <span  class="text-white"> Next </span>
+                <button class="btn login-btn m-1" type = 'submit'>
+                  <input type="submit" class="text-white"  value="Next" onclick="location.href = 'Contact Details.html' "/>
                 </button>
               </div>
             </form>

@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from scriptspy.models import User, Admin
+from scriptspy.models import User, Admin, Personal, Contact
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required
 from scriptspy import db
@@ -12,13 +12,41 @@ def login():
     return render_template('login.html')
 
 
-@auth.route('/profileSubmit', methods=['POST'])
+@auth.route('/profileSubmit', methods=['POST', 'GET'])
 def profilesub():
+
+    first_name = request.form.get('first_name')
+    DOB = request.form.get('DOB')
+    Gender = request.form.get('Gender')
+
+
+    user = User.query.filter_by(first_name=first_name).first()
+
+    new_personal = Personal(DOB=DOB, Gender=Gender, user_id=user.id)
+    # add the new user to the database
+    db.session.add(new_personal)
+    db.session.commit()
+
     return redirect(url_for('contact'))
 
 
 @auth.route('/ContactSubmit', methods=['POST'])
 def contactSub():
+
+    Email = request.form.get('Email')
+    Address = request.form.get('Address')
+    City = request.form.get('City')
+    District = request.form.get('District')
+    Phone = request.form.get('Phone')
+
+
+    user = User.query.filter_by(email=Email).first()
+
+    new_contact = Contact(Address=Address, City=City, District=District, Phone=Phone, user_id=user.id)
+    # add the new user to the database
+    db.session.add(new_contact)
+    db.session.commit()
+
     return redirect(url_for('health'))
 
 
@@ -61,7 +89,9 @@ def signup_donor():
     db.session.add(new_user)
     db.session.commit()
 
-    return redirect(url_for('personal'))
+    return redirect(url_for('personal', first_name=first_name))
+
+
 
 
 @auth.route('/signup_doc', methods=['GET', 'POST'])
