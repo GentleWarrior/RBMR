@@ -3,3 +3,5 @@ __pycache__/
 *$py.class
 venv/
 .vscode/
+.__pycache__/
+.scriptspy/__pycache__/

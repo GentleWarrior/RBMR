@@ -123,43 +123,42 @@
     <div class="card login-card">
       <div class="row no-gutters">
         <div class="col-md-5">
-          <img src="/static/assets/images/login.png" alt="login" class="login-card-img">
+          <img src="../static/assets/images/contact.png"  class="login-card-img">
         </div>
         <div class="col-md-7">
           <div class="card-body">
-            <p class="login-card-description">Contact Details</p>
-            <form action="#!", method="POST">
+            <p class="login-card-description">Contact Details & Address </p>
+
+
+            <form action="/ContactSubmit" method='POST' >
               <div class="form-group">
-                <label for="email" class="">Email</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Email address">
+              <div class="form-group">
+                <label for="phone" class="">Email</label>
+                <input type="tel"  id="phone" class="form-control" placeholder="Email" name ="Email" required>
               </div>
-              <div class="form-group">
+                <div class="form-group">
                 <label for="phone" class="">Phone number</label>
-                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone number">
+                <input type="tel" id="phone" class="form-control" placeholder="Phone number" name ="Phone" required>
               </div>
               <div class="form-group">
                 <label for="address" class="">Address Line 1</label>
-                <input type="text" name="address" id="address" class="form-control" placeholder="1234 Main St">
+                <input type="text"  id="address" class="form-control" placeholder="1234 Main St" name ="Address"required>
               </div>
               <div class="form-group">
                 <label for="address" class="">Address Line 2</label>
-                <input type="text" name="address" id="address2" class="form-control" placeholder="1234 Main St">
-              </div>
-              <div class="form-group">
-                <label for="address" class="">Address Line 3</label>
-                <input type="text" name="address" id="address3" class="form-control" placeholder="1234 Main St">
+                <input type="text"  id="address2" class="form-control" placeholder="1234 Main St" required>
               </div>
               <div class="form-group">
                 <label for="POBOX" class="">P.O BOX</label>
-                <input type="text" name="POBOX" id="POBOX" class="form-control" placeholder="P.O BOX">
+                <input type="text" name="POBOX" id="POBOX" class="form-control" placeholder="P.O BOX" required>
               </div>
               <div class="form-group">
                 <label for="City" class="">City</label>
-                <input type="text" name="City" id="City" class="form-control" placeholder="City">
+                <input type="text"  id="City" class="form-control" placeholder="City" name="City" required>
               </div>
               <div class="form-group">
                 <label  class="">District</label>
-                <select class="form-select form-select-lg" aria-label="District">
+                <select class="form-select form-select-lg" aria-label="District" name="District" required>
                   <option selected>Choose...</option>
                   <option>Gasabo</option>
                   <option>Kicukiro</option>
@@ -168,10 +167,10 @@
               </div>
               <div class="d-flex justify-content-between" role="group" aria-label="">
                 <button class="btn login-btn m-1">
-                  <a class="text-white" href="Personal Details.html">Previous</a>
+                  <a class="text-white" href="Personal details.html">Previous</a>
                 </button>
                 <button class="btn login-btn m-1">
-                  <a class="text-white" href="Health Details.html">Next</a>
+                <input type="submit"  value="Next" onclick="location.href = 'Health Details.html' "/>
                 </button>
               </div>
             </form>

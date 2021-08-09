@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>RBMR-Learn</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap" rel="stylesheet">
+    <STYLE>
+       html,body{
+    background-color: #fff;
+    font-family: 'Tajawal',sans-serif;
+    overflow-x: hidden !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+*{
+    text-decoration: none !important;
+}
+
+.nav{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px 0 25px;
+    background-color: #fff;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.10);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.nav .links a{
+    margin-right: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.nav .links .mainlink{
+    color: #e0501b;
+}
+.nav .logo{
+    color:#000;
+}
+
+.nav h4{
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+/* LANDING CSS */
+
+.landing{
+    display: flex;
+    flex-direction:row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0vw 5vw 0 5vw;
+    height: 100vh;
+}
+
+.landingText h1{
+    font-size: 4vw;
+    margin: 0 !important;
+}
+
+.landingText h3{
+    margin: 6px !important;
+    font-size: 20px;
+     color: #e0501b;
+    line-height: 30px;
+    color:
+
+}.landingText h2{
+    margin: 6px !important;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.landingText .btn{
+    width: 100px;
+    margin-top: 30px;
+    padding: 14px 20px 14px 20px;
+    background-color: #2f8be0;
+    border-radius: 45px;
+    text-align: center;
+}
+
+.landingText .btn a{
+    font-size: 1.2vw;
+    color: #fff;
+}
+
+.landingImage img{
+    width: 50vw;
+}
+
+
+/* ABOUT CSS */
+
+.about{
+    height: 550px;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.aboutText{
+    position: relative;
+    padding: 0 50px;
+    height: inherit;
+}
+
+.aboutText h1{
+    position: relative;
+    left: 110px;
+}
+
+.aboutText img{
+    width: 10vw;
+    position: absolute;
+    top: 70px;
+}
+
+.aboutList{
+    width: 50%;
+}
+
+ol{
+    list-style: none;
+    color: #e0501b;
+}
+
+ol li{
+    font-size: 34px;
+    position: relative;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+li p{
+    font-size: 16px;
+    color: #000;
+    padding-left: 60px;
+    line-height: 30px;
+    opacity: 0.6;
+}
+
+li span{
+    position: absolute;
+    line-height: 25px;
+    font-weight: 600;
+}
+
+/* INFO_SECTION CSS */
+
+.infoSection{
+    height: 600px;
+}
+
+.infoHeader{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.infoCards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0 40px 0;
+}
+
+.infoCards .card{
+    position: relative;
+    height: 360px;
+    width: 350px;
+    background: #fff;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.09), 0 10px 10px rgba(0,0,0,0.09)
+}
+
+.infoCards .one .cardoneImg{
+    width: 180px;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+}
+.infoCards .two .cardtwoImg{
+    width: 180px;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+}
+.infoCards .three .cardthreeImg{
+    width: 180px;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+}
+
+.cardbgone{
+    height: 150px;
+    background-color: #ffce63;
+}
+.cardbgtwo{
+    height: 150px;
+    background-color: #a1cdff;
+}
+
+.cardContent{
+    padding: 0 20px;
+}
+
+.cardContent h2{
+    font-weight: 600;
+}
+
+.cardContent p{
+    line-height: 30px;
+    opacity: 0.6
+}
+
+
+.cardContent .cardBtn{
+    position: absolute;
+    right: 20px;
+    padding: 10px;
+    background-color: #ededed;
+    width: 25px;
+    height: 20px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out 0.2s;
+}
+
+.cardContent .cardBtn:hover{
+  background-color: #2f8be0;
+}
+
+.cardContent .cardBtn .cardIcon{
+    position: relative;
+    top:0px;
+    left:0px;
+    width: 16px;
+}
+
+/* RESPONSIVE */
+
+
+@media only screen and (max-width: 600px){
+
+.nav{
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    height: auto;
+    overflow-y: hidden;
+}
+
+.nav h4{
+    font-size: 6vw;
+    margin-top: 10px;
+    margin-bottom: 14px;
+}
+
+.nav .links a{
+    margin-right: 25px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* LANDING PAGE */
+
+.landing{
+    flex-direction: column-reverse;
+    height: 750px;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+.landingText h1{
+    font-size: 6vw;
+    margin: 0 !important;
+}
+
+.landingText h3{
+    font-size: 16px;
+}
+
+.landingText .btn{
+    margin: 0 auto;
+}
+
+.landingText .btn a{
+    font-size: 3vw;
+}
+
+.landingImage img{
+    width: 52vw;
+    margin-bottom: 20px;
+}
+
+
+/* ABOUT */
+
+.about{
+    height: auto;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutText{
+    padding: 0 50px;
+    height: 100px;
+}
+
+.aboutText h1{
+    left: 40px;
+    font-size: 5vw;
+}
+
+.aboutText img{
+    width: 16vw;
+    top: 10px;
+    left: -30px;
+}
+
+.aboutList{
+    width: 75%;
+}
+
+ol li{
+    font-size: 26px;
+}
+
+li p{
+    font-size: 14px;
+}
+
+.infoSection{
+    height: auto;
+}
+
+.infoHeader{
+    text-align: center;
+    margin: 40px 0;
+}
+
+.infoCards{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+.infoCards .card{
+    margin-bottom: 60px;
+}
+
+
+
+
+
+
+    </STYLE>
+</head>
+<body>
+ <div class="wrapper">
+        <div class="nav">
+            <a href="Home.html" class="logo">
+            <div class="logo">
+                <h4>RBMR</h4>
+            </div>
+            </a>
+            <div class="links">
+                <a href="Learn More.html"> Learn More</a>
+                <a href="How To.html"> How To Donate</a>
+                <a href="Register.html" class="mainlink"> Register</a>
+                <a href="login.html">Login </a>
+                <a href="Dashboard.html"> Dashboard </a>
+
+            </div>
+        </div>
+
+    </div>
+
+ <!---- Learn More Section---->
+        <div class="about">
+           <div class="aboutText" data-aos="fade-up" data-aos-duration="1000">
+              <h1> <br>Why is it important that <br> <span style="color:#2f8be0;font-size:3vw;"> you donate?</span> </h1>
+               <img src="../static/assets/images/lady.png">
+           </div>
+
+        <div class="aboutList" data-aos="fade-left" data-aos-duration="1000">
+            <ol>
+                <li>
+                    <span>1</span>
+                    <p> Not too long ago, curing Leukemia seemed to be a distant dream.</p>
+                </li>
+
+                <li>
+                    <span>2</span>
+                    <p> The percentange of African donors on any registry is less that 25%.</p>
+                </li>
+
+                <li>
+                    <span>3</span>
+                    <p> Not too long ago, curing Leukemia seemed to be a distant dream.</p>
+                </li>
+
+                <li>
+                    <span>3</span>
+                    <p> Not too long ago, curing Leukemia seemed to be a distant dream.</p>
+                </li>
+
+            </ol>
+        </div>
+
+        </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+            AOS.init();
+    </script>
+</body>
+</html>

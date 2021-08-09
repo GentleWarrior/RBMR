@@ -124,7 +124,7 @@
             <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="How it works.html">How it works</a>
+            <a class="nav-link" href="How To.html">How it works</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="Register.html">Register</a>
@@ -133,6 +133,8 @@
       </div>
     </div>
   </nav>
+
+  <form  action="/signup_donor" method="POST" novalidate>
 <div class="container register">
                 <div class="row">
                     <div class="col-md-3 register-left">
@@ -150,22 +152,29 @@
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Doctor</a>
                             </li>
                         </ul>
-                        <div class="tab-content" id="myTabContent">
+                        <form class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Register as Donor</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+
+                                            <input type="text" class="form-control" placeholder="First Name"  value="" name="first_name" required/>
+
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
+
+                                            <input type="text" class="form-control" placeholder="Last Name"  value=""name="last_name" required/>
+
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="" />
+                                            <input type="password" class="form-control" placeholder="Password*" value="" name="password" required/>
+
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
+
+                                            <input type="password" class="form-control" placeholder="Confirm Password*"  value="" name="password"  required/>
+
                                         </div>
                                         <div class="form-group">
                                             <div class="maxl">
@@ -182,47 +191,52 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email *" value="" />
+
+                                            <input type="email" class="form-control" placeholder="Your Email *" value=""  name="email" required/>
+
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
+                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" required />
+
                                         </div>
 
                                         <input type="submit" class="btnRegister"  value="Register" onclick="location.href ='Personal details.html'"/>
                                     </div>
                                 </div>
                             </div>
+                        </form>
+
+                            <form action="/signup_doc" method="POST">
                             <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <h3  class="register-heading">Register as Doctor</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                            <input type="text" class="form-control" placeholder="First Name *" value="" name="first_name" required/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                            <input type="text" class="form-control" placeholder="Last Name *" value=""  />
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email *" value="" />
+                                            <input type="email" class="form-control" placeholder="Email *" value="" name="email" required/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                                            <input type="password" maxlength="10" minlength="10" class="form-control" placeholder="Password *" value="" name="password" required />
                                         </div>
-
-
+                                        <div class="form-group">
+                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" required />
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
 
                                         </div>
-                                        <input type="submit" class="btnRegister"  value="Register" onclick="location.href = 'login.html' "/>
+                                        <input type="submit" class="btnRegister"  value="Register" onclick="location.href = 'Personal details.html' "/>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-
-            </div>
-
+  </form>
 </body>
 </html>
