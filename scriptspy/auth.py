@@ -7,18 +7,16 @@ from scriptspy import db
 auth = Blueprint('auth', __name__)
 
 
-@auth.route('/login.html')
+@auth.route('/login.html', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+        return render_template('login.html')
 
 
 @auth.route('/profileSubmit', methods=['POST', 'GET'])
 def profilesub():
-
     first_name = request.form.get('first_name')
     DOB = request.form.get('DOB')
     Gender = request.form.get('Gender')
-
 
     user = User.query.filter_by(first_name=first_name).first()
 
@@ -32,13 +30,11 @@ def profilesub():
 
 @auth.route('/ContactSubmit', methods=['POST'])
 def contactSub():
-
     Email = request.form.get('Email')
     Address = request.form.get('Address')
     City = request.form.get('City')
     District = request.form.get('District')
     Phone = request.form.get('Phone')
-
 
     user = User.query.filter_by(email=Email).first()
 
@@ -50,11 +46,13 @@ def contactSub():
     return redirect(url_for('health'))
 
 
-@auth.route('/login', methods=['POST', 'GET'])
+@auth.route('/dash', methods=['POST', 'GET'])
 def login_post():
     email = request.form.get('email')
     password = request.form.get('password')
     remember = True if request.form.get('remember') else False
+
+    print(email,password)
 
     admin = Admin.query.filter_by(email=email).first()
 
@@ -72,17 +70,16 @@ def login_post():
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup_post():
     email = request.form.get('email')
-    fname = request.form.get('first_name') #give an input the name='first_name' on your front end
-    lname = request.form.get('last_name') #give an input the name='last_name' on your front end
+    fname = request.form.get('first_name')  # give an input the name='first_name' on your front end
+    lname = request.form.get('last_name')  # give an input the name='last_name' on your front end
+
+
 @auth.route('/signup_donor', methods=['GET', 'POST'])
-
-
 def signup_donor():
     email = request.form.get('email')
     first_name = request.form.get('first_name')
     last_name = request.form.get('last_name')
     password = request.form.get('password')
-
 
     user = User.query.filter_by(email=email).first()  # if this returns a user, then the email already exists in
     # database
@@ -92,7 +89,8 @@ def signup_donor():
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
 
-    new_user = User(email=email, first_name=first_name, last_name=last_name, password=generate_password_hash(password, method='sha256'))
+    new_user = User(email=email, first_name=first_name, last_name=last_name,
+                    password=generate_password_hash(password, method='sha256'))
     # add the new user to the database
     db.session.add(new_user)
     db.session.commit()
@@ -114,7 +112,8 @@ def signup_doc():
         return redirect(url_for('auth.signup_doc'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
-    new_admin = Admin(first_name=first_name, last_name=last_name, email=email, password=generate_password_hash(password, method='sha256'))
+    new_admin = Admin(first_name=first_name, last_name=last_name, email=email,
+                      password=generate_password_hash(password, method='sha256'))
     print(new_admin)
     # add the new user to the database
     db.session.add(new_admin)

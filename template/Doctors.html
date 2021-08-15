@@ -490,25 +490,6 @@ tr td:last child:{
                     </div>
                 </div>
 
-                <div class="card-single">
-                    <div>
-                        <h1> {{donorcount}} </h1>
-                        <span> Donors </span>
-                    </div>
-                    <div>
-                        <span class="las la-users"> </span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1> {{donorcount}} </h1>
-                        <span> Donor Records</span>
-                    </div>
-                    <div>
-                        <span class="las la-file-medical-alt"> </span>
-                    </div>
-                </div>
 
             </div>
 
@@ -516,8 +497,7 @@ tr td:last child:{
                 <div class="Donors">
                     <div class="card">
                         <div class="card-header">
-                            <h2> Recent Donors </h2>
-                            <button> See all <span class ="las la-arrow-right"></span></button>
+                            <h2> All Doctors </h2>
 
                         </div>
                       <div class="card-body">
@@ -526,23 +506,19 @@ tr td:last child:{
                                  <table width="100%">
                                     <thead>
                                       <tr>
-                                        <td> Donor Name</td>
+                                        <td> Doctor Name</td>
                                         <td> Email</td>
-                                        <td> Health Data</td>
+
                                       </tr>
                                     </thead>
                                     <tbody>
-                                     {%for donor in donors%}
+                                     {%for doctor in doctors%}
                                      <tr>
-                                        <td> {{donor.first_name}}</td>
-                                        <td> {{donor.email}}</td>
-                                        <td>
-                                            <span class="status purple"></span>
-                                            Review
-                                        </td>
+                                        <td> {{doctor.first_name}}</td>
+                                        <td> {{doctor.email}}</td>
+
                                      </tr>
                                      {%endfor%}
-
 
 
 

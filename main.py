@@ -2,6 +2,7 @@ from flask import Flask, render_template, blueprints
 from scriptspy import views
 from scriptspy import create_app
 from flask_login import login_required, current_user
+from scriptspy.models import User, Admin, Personal, Contact
 
 
 app = create_app()
@@ -46,27 +47,44 @@ def health():
 def dash():
     return render_template('Dashboard.html')
 
+@app.route("/Donors.html")
+def don():
+    donors = User.query.all()
+    details = Personal.query.all()
+    contacts = Contact.query.all()
 
-@app.route('/Dashboard.html')
+    return render_template('Donors.html', email=current_user.email, donors=donors, details=details,
+                           contacts=contacts)
+
+@app.route("/Donor Records.html")
+def records():
+    donors = User.query.all()
+    details = Personal.query.all()
+    contacts = Contact.query.all()
+
+    return render_template('Donor Records.html', email=current_user.email, donors=donors, details=details, contacts=contacts)
+
+@app.route("/Doctors.html")
+def doctors():
+    doctors = Admin.query.all()
+    doctorcount = Admin.query.count()
+
+    return render_template('Doctors.html', email=current_user.email, doctors=doctors, doctorcount=doctorcount)
+
+
+@app.route('/profile')
 @login_required
 def profile():
-    return render_template('Dashboard.html', name=current_user.name)
+    donors = User.query.all()
+    doctorcount=Admin.query.count()
+    print(doctorcount)
+    donorcount=User.query.count()
+    print(donorcount)
+    details = Personal.query.all()
+    contacts = Contact.query.all()
 
+    return render_template('Dashboard.html', email=current_user.email, donors=donors, details=details, contacts=contacts, donorcount=donorcount, doctorcount=doctorcount)
 
-#Using this for testing
-@app.route('/testcreateac')
-def test():
-    from scriptspy.models import User
-    from werkzeug.security import generate_password_hash
-    from scriptspy import db
-
-    new = User(email='test@test.com', first_name='John',last_name='Doe', password=generate_password_hash('test', method='sha256'))
-
-    # add the new user to the database
-    db.session.add(new)
-    db.session.commit()
-    return 'Added user to db'
 
 if __name__ == "__main__":
-
     app.run(host='localhost', port='5000', debug=True)

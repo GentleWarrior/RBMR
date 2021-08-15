@@ -37,3 +37,15 @@ def health():
 @views.route('/', methods=['GET', 'POST'])
 def dash():
     return render_template('Dashboard.html')
+
+@views.route('/', methods=['GET', 'POST'])
+def don():
+    return render_template('Donors.html')
+
+@views.route('/', methods=['GET', 'POST'])
+def records():
+    return render_template('Donor Records.html')
+
+@views.route('/', methods=['GET', 'POST'])
+def doctor():
+    return render_template('Doctor.html')

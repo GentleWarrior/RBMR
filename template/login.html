@@ -142,14 +142,26 @@ form .signup-link a:hover{
   </head>
   <body>
     <div class="wrapper">
+       {% with messages = get_flashed_messages() %}
+           {%if messages%}
+              {% for message in messages  %}
+                  <div class="alert alert-primary">
+                      {{message}}
+                      </br>
+                  </div>
+              {%  endfor  %}
+           {% endif %}
+        {% endwith %}
+
       <div class="title">RBMR</div>
-      <form action="/login" method="POST">
+      <form action="/dash" method="POST">
+
         <div class="field">
-          <input type="text" required>
+          <input type="text" name="email" required>
           <label>Email Address</label>
         </div>
         <div class="field">
-          <input type="password" required>
+          <input type="password" name="password" required>
           <label>Password</label>
         </div>
         <div class="content">
@@ -160,7 +172,7 @@ form .signup-link a:hover{
           <div class="pass-link"><a href="#">Forgot password?</a></div>
         </div>
         <div class="field">
-          <input type="submit" class="field" value="Login" onclick="location.href = 'Dashboard.html">
+            <input type="submit" class="field" value="Login">
         </div>
         <div class="signup-link">Not a member? <a href="Register.html">Signup now</a></div>
       </form>
